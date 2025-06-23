@@ -15,6 +15,8 @@ def create():
     conn.commit()
     conn.close()
 
+create()
+
 @app.route("/", methods = ["POST", "GET"])
 def insert():
     if request.method == "POST":
@@ -64,5 +66,4 @@ def view():
 
 
 if __name__ == "__main__" :
-    create()
     app.run(debug = True)
