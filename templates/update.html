@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("static/images/neon.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        form {
+            border: 2px solid black;
+            width: 35%;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+            align-items: center;
+            text-align: center;
+            margin-left: 30%;
+            margin-top: 10%;
+            border-radius: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 12px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            border: none;
+            border: 1px solid black;
+            background-color: transparent;
+        }
+
+        input:hover {
+            border: none;
+            border: 1px solid black;
+            font-size: 19px;
+            transition: ease-in-out;
+            transition-duration: 0.3s;
+            background-color: black;
+            color: white;
+            font-size: 15px;
+        }
+
+        input::placeholder {
+            color: white;
+            font-style: oblique;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+        }
+
+        button {
+            padding: 10px;
+            width: 90%;
+            border-radius: 10px;
+            border: none;
+            border: 1px solid black;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+        }
+
+        @media screen and (max-width : 600px) {
+            body {
+                background-size: cover;
+                margin: 0;
+            }
+
+            form {
+                width: 200px;
+                margin-left: 8%;
+                height: 320px;
+                margin-top: 100px;
+
+            }
+
+            input {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form action="/update/{{rec[0]}}" method = "POST">
+        <input type="text" name="email" value="{{rec[1]}}">
+        <input type="password" name="password" value="{{rec[2]}}">
+        <button type="submit">UPDATE</button>
+    </form>
+</body>
+</html>
